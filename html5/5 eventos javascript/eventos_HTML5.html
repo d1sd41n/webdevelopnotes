@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>no title</title>
+</head>
+
+<script>
+	var imagen
+
+	function tipoimagen() {
+		alert("cyberpunk");
+	}
+
+
+	function manejaimagen() {
+//		console.log("11111111111111111");
+		imagen = document.getElementsByTagName("img");
+		console.log(imagen);
+//		for (var i = 0; i < 4; i++) {
+//			console.log(i);
+//			imagen[i];
+//			console.log(imagen[i]);
+//		}
+
+		imagen[0].addEventListener("mouseover", function(){imagen[0].width = imagen[0].clientWidth * 1.2;imagen[0].height = imagen[0].clientHeight * 1.2;}, false);
+		imagen[0].addEventListener("mouseout", function(){imagen[0].width = imagen[0].clientWidth / 1.2;imagen[0].height = imagen[0].clientHeight / 1.2;}, false);
+		imagen[0].addEventListener("click", tipoimagen, false);
+		
+		imagen[1].addEventListener("mouseover", function(){imagen[1].width = imagen[1].clientWidth * 1.2;imagen[1].height = imagen[1].clientHeight * 1.2;}, false);
+		imagen[1].addEventListener("mouseout", function(){imagen[1].width = imagen[1].clientWidth / 1.2;imagen[1].height = imagen[1].clientHeight / 1.2;}, false);
+		imagen[1].addEventListener("click", tipoimagen, false);
+		
+		imagen[2].addEventListener("mouseover", function(){imagen[2].width = imagen[2].clientWidth * 1.2;imagen[2].height = imagen[2].clientHeight * 1.2;}, false);
+		imagen[2].addEventListener("mouseout", function(){imagen[2].width = imagen[2].clientWidth / 1.2;imagen[2].height = imagen[2].clientHeight / 1.2;}, false);
+		imagen[2].addEventListener("click", tipoimagen, false);
+		
+		imagen[3].addEventListener("mouseover", function(){imagen[3].width = imagen[3].clientWidth * 1.2;imagen[3].height = imagen[3].clientHeight * 1.2;}, false);
+		imagen[3].addEventListener("mouseout", function(){imagen[3].width = imagen[3].clientWidth / 1.2;imagen[3].height = imagen[3].clientHeight / 1.2;}, false);
+		imagen[3].addEventListener("click", tipoimagen, false);
+	}
+
+//	function crecer() {
+//		imagen[0].width = imagen[0].clientWidth * 1.2;
+//		imagen[0].height = imagen[0].clientHeight * 1.2;
+//
+//	}
+	
+
+//	function menguar() {
+//		imagen[0].width = imagen[0].clientWidth / 1.2;
+//		imagen[0].height = imagen[0].clientHeight / 1.2;
+//
+//	}
+
+
+//	window.onload = manejaimagen;
+	window.addEventListener("load", manejaimagen, false);
+</script>
+
+<body>
+	<p><img src="1.jpg">&nbsp;<img src="2.jpeg">&nbsp;<img src="3.jpg">&nbsp;<img src="4.jpg"></p>
+
+</body></html>
+<script></script>
