@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="">
 </head>
-
 <style>
-	#lienzo {
-		background-color: chocolate;
+	#lienzo{
+		border: 1px #fe3939 solid;
 	}
-
-	section {
-		width: 500px;
-		position: relative;
-		margin: auto;
-	}
-
 </style>
-	
 <script>
 	
 	function comenzar(){
-		
 		var elemento = document.getElementById("lienzo");
-		
+	
 		lienzo = elemento.getContext("2d");
 		
-		lienzo.fillStyle = "#fdfc8d"
-		lienzo.strokeStyle = "blue";
-		lienzo.globalAlpha = 0.3;
+		lienzo.beginPath();
 		
-		lienzo.strokeRect(100,100,120,120);
-		lienzo.fillRect(110,110,100,100);
-		lienzo.clearRect(120,120,80,80);
+		lienzo.moveTo(100,200);
+		
+		lienzo.lineTo(200,200);
+		lienzo.lineTo(200,150);
+		lienzo.lineTo(100,150);
+		
+		lienzo.lineTo(100,200);
+		
+		lienzo.clip();
+		
+		
+		lienzo.beginPath();
+		
+		
+		for(i=0; i<250; i+=10){
+			lienzo.moveTo(0,i);
+			
+			lienzo.lineTo(500,i);
+		}
+		
+		lienzo.stroke();
+//		lienzo.fill();
 	}
 	
 	window.addEventListener("load", comenzar, false);
@@ -45,11 +50,9 @@
 <body>
 	<section id="dibujo">
 		<canvas id="lienzo" width="500" height="300">
-
-
+			Este elemento no es soportado por su navegador
 		</canvas>
+	
 	</section>
 
-</body>
-
-</html>
+</body></html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,47 +8,47 @@
 </head>
 
 <style>
-	#lienzo {
-		background-color: chocolate;
-	}
-
-	section {
+	section{
 		width: 500px;
-		position: relative;
 		margin: auto;
 	}
-
+	
+/*
+	#lienzo{
+		background-color: red;
+	}
+*/
 </style>
-	
+
 <script>
-	
 	function comenzar(){
 		
 		var elemento = document.getElementById("lienzo");
 		
 		lienzo = elemento.getContext("2d");
 		
-		lienzo.fillStyle = "#fdfc8d"
-		lienzo.strokeStyle = "blue";
-		lienzo.globalAlpha = 0.3;
+		var degradado = lienzo.createRadialGradient(250,150,50,250,150,300);
 		
-		lienzo.strokeRect(100,100,120,120);
-		lienzo.fillRect(110,110,100,100);
-		lienzo.clearRect(120,120,80,80);
+		degradado.addColorStop(1,"red");
+		
+		degradado.addColorStop(0,"green");
+		
+		lienzo.fillStyle = degradado;
+	
+		lienzo.fillRect(0,0,500,300);
+		
 	}
 	
 	window.addEventListener("load", comenzar, false);
-
 </script>
 
 <body>
 	<section id="dibujo">
 		<canvas id="lienzo" width="500" height="300">
-
-
+			su navegador no soporta el canvas
+			
 		</canvas>
+	
 	</section>
 
-</body>
-
-</html>
+</body></html>
