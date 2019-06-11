@@ -1,0 +1,90 @@
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<style>
+	#lienzo{
+		border: 1px #fe3939 solid;
+	}	
+</style>
+	
+<script>
+	
+	var elemento;
+	var lienzo
+	var y = 300;
+	var estado = "bajando";
+	var arriba = y;
+	var horizontal = 0;
+	
+	function comenzar(){
+		
+		
+		elemento = document.getElementById("lienzo");
+		
+		lienzo = elemento.getContext("2d");
+		
+		window.addEventListener("mousemove", animacion, false);
+		
+		
+	}
+	
+	function animacion(e){
+		
+		lienzo.clearRect(0,0,1200,900);
+		
+		var xdelraton = e.clientX;
+		var ydelraton = e.clientY;
+		
+		var xcentro = 550;
+		var ycentro = 325;
+		
+		var angulo = Math.atan2(xdelraton - xcentro, ydelraton - ycentro);
+		
+		var x = xcentro + Math.round(Math.sin(angulo)*10);
+		var y = ycentro + Math.round(Math.cos(angulo)*10);
+		
+		lienzo.beginPath();
+		
+		lienzo.arc(xcentro, ycentro, 20,0,Math.PI*2, false);
+		
+		lienzo.moveTo(620,325);
+			
+		lienzo.arc(600, ycentro, 20,0,Math.PI*2, false);
+		
+		lienzo.stroke();
+		
+		lienzo.beginPath();
+		
+		lienzo.arc(x, y, 10,0,Math.PI*2, false);
+		
+		lienzo.moveTo(x,y);
+		
+		lienzo.arc(x+50, y, 10,0,Math.PI*2, false);
+		
+		lienzo.fill();
+		
+	}
+
+		
+	
+	
+	
+	
+	window.addEventListener("load", comenzar, false);
+
+</script>
+
+<body>
+	<section id="dibujo">
+		<canvas id="lienzo" width="1200" height="900">
+			Este elemento no es soportado por su navegador
+		</canvas>
+	
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<style>
+	#lienzo{
+		border: 1px #fe3939 solid;
+	}	
+</style>
+
+	
+<script>
+	
+	function comenzar(){
+		
+		var elemento = document.getElementById("lienzo");
+		
+	
+		 lienzo = elemento.getContext("2d");
+		
+		
+		var imagen = new Image();
+		
+		imagen.src = "original.gif";
+		
+		
+		imagen.addEventListener("load", manipularimagen, false);
+		
+		
+		
+	}
+	
+	
+	function manipularimagen(e){
+		
+		imagen = e.target;
+		
+		lienzo.drawImage(imagen, 0, 0);
+		
+		var info_imagen = lienzo.getImageData(0 ,0, 145, 145);
+		
+		var posicion;
+		
+		for(x=0; x<=145; x++){
+			for(y=0; y <=145; y++){
+				posicion = (info_imagen.width * 4 * y) + (x * 4);
+				
+				info_imagen[posicion] = 255 - info_imagen.data[posicion];
+				info_imagen[posicion+1] = 255 - info_imagen.data[posicion];
+				info_imagen[posicion+2] = 255 - info_imagen.data[posicion];
+			}
+		}
+		
+		lienzo.putImageData(info_imagen, 300 , 250);
+		
+	}
+	
+	window.addEventListener("load", comenzar, false);
+
+</script>
+<body>
+	<section id="dibujo">
+		<canvas id="lienzo" width="1200" height="900">
+			Este elemento no es soportado por su navegador
+		</canvas>
+	
+	</section>
+</body>
+
+</html>

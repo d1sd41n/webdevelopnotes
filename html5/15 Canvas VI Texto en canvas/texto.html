@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<style>
+	#lienzo{
+		border: 1px #fe3939 solid;
+	}
+	
+	section{
+		width: 800px;
+		position: relative;
+		margin: auto;
+	}
+</style>
+	
+<script>
+	
+	function comenzar(){
+		
+		var elemento = document.getElementById("lienzo");
+		
+	
+		 var lienzo = elemento.getContext("2d");
+		
+		lienzo.shadowColor = "rgba(0,0,0,0.5)";
+		
+		lienzo.shadowOffsetX = 3;
+		lienzo.shadowOffsetY = 3;
+		lienzo.shadowBlur = 4;
+		
+		lienzo.font = "bold 48px verdana";
+		
+		lienzo.textAlign = "start";
+		
+		lienzo.textBaseline = "top";
+		
+		lienzo.fillText("Hola hijos de puta", 100, 100);
+		
+		var dimensiones = lienzo.measureText("Hola hijos de puta");
+		
+//		lienzo.strokeRect(100, 100, dimensiones.width +5, 48 + 5);
+		
+//		lienzo.stroke();
+		
+	}
+	
+	window.addEventListener("load", comenzar, false);
+
+</script>
+
+<body>
+	<section id="dibujo">
+		<canvas id="lienzo" width="800" height="600">
+			Este elemento no es soportado por su navegador
+		</canvas>
+	
+	</section>
+</body>
+
+</html>
