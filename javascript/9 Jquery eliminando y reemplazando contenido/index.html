@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="micss.css">
+
+
+</head>
+<script>
+	$(document).ready(function(){
+		
+		var z = document.getElementById("cerrar");
+		z.addEventListener("click", cerrar_banner, false);
+		
+		document.getElementById("imagen1").addEventListener("click", carrito, false);
+		
+		
+	});
+	
+	function cerrar_banner(){
+		$("#banner").remove();
+	}
+	
+	function carrito(){
+		$("#imagen1").replaceWith("<p>agregado al carro</p>");
+	}
+</script>
+<body>
+	<div id="banner">
+		banner de prueba
+		<p id="cerrar"> cerrar</p>
+	</div>
+	<div id="carrete">
+		<img src="2882719515_b35c5a02b8_z.jpg" id="imagen1">
+		&nbsp;
+		<img src="d9d015e3e01db860e3ce5faa9d5a6607.jpg" id="imagen2">
+	</div>
+</body>
+</html>

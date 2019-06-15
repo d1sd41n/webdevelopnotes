@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="micss.css">
+
+
+</head>
+<script>
+	$(document).ready(function(){
+//		alert($("#errores h2").html());
+//		$("#errores").html("<p>Hay errores</p>");
+		$("#errores").append("<p>Hay errores</p>");
+		
+		n_usuario = document.getElementById("usuario");
+	
+	
+		
+	});
+	
+	function validar(){
+		console.log("ewfrgfwfeffew");
+		console.log(n_usuario.value);
+		if(n_usuario.value==""){
+			
+			console.log("1111111111111111111111");
+			$("#usuario").after("<h2>rellene el campo</h2>");
+		}
+	}
+	
+</script>
+<body>
+	<div id="contenedor">
+		<div id="errores" class="micontenedor">
+			<h2>Errores</h2>
+		</div>
+	</div>
+	
+	
+	<form action="" method="get">
+		
+		<input name="" type="text" id="usuario"><br>
+		<input name="" type="text" id="apellido"><br>
+		<input name="" type="text" id="nombre"><br>
+		
+		
+		<input type="button" value="dale" onclick="validar()">
+	
+	
+	
+	</form>
+	
+	
+	
+	
+</body>
+</html>

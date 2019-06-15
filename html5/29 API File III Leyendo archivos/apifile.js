@@ -94,6 +94,12 @@ function listar(archivos){
 	
 }
 
+function crearcarpeta(nombre_carpeta){
+	
+	 espacio.getDirectory(nombre_carpeta, {create:true, exclusive:false}, mostrar, errores);
+	
+}
+
 
 
 function errores(e){

@@ -1,0 +1,29 @@
+
+
+body{
+	background-color:#000000;
+}
+
+img{
+	float: left;
+	margin: 15px;
+	width:250px;
+	height:175px;
+}
+
+p{
+	color:#5a2eea;
+	font-size:2em;
+	float: lef;
+}
+
+#banner{
+	background-color: #1e9211;
+	position: absolute;
+	left: 400px;
+	width:450px;
+	height:300px;
+	font-size: 36px;
+	text-align: center;
+	top: 50px;
+}

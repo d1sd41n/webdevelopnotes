@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+d<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Usando Arrays</title>
+	<link rel="stylesheet" href="css/micss.css">
+	<script>
+		var articulos = ["zapatillas", "camiseta", "pantalon", "calcetines"];
+		//		var articulos = new array("zapatillas", "camiseta", "pantalon", "calcetines");
+		//		var articulos = [];
+
+	</script>
+</head>
+
+<body>
+	<div class="contenedor">
+		<div class="header">
+			<p class="logo">JavaScript Arrays <i class="mm">Píldoras Informáticas</p>
+		</div>
+		<div class="contenido">
+			<div class="principal">
+				<h1>Manejando Arrays</h1>
+				<script>
+					document.write("<p> el primer es lemento es <strong>");
+					document.write(articulos[0] + "</strong></p>");
+					alert(articulos.length);
+					
+					document.write("<p> el ultimo lemento es <strong>");
+					document.write(articulos[articulos.length-1] + "</strong></p>");
+					
+					articulos.unshift("bola");
+					document.write("<p> el primer es lemento es <strong>");
+					document.write(articulos[0] + "</strong></p>");
+					
+					articulos.push(prompt("introduce alguna mierda"));
+					document.write("<p> el ultimo es lemento es <strong>");
+					document.write(articulos[articulos.length-1] + "</strong></p>");
+					document.write("<p> todos <strong>");
+					document.write(articulos + "</strong></p>");
+					
+					articulos.shift();
+					
+					document.write("<p> todos <strong>");
+					document.write(articulos + "</strong></p>");
+					
+					articulos.pop();
+					
+					document.write("<p> todos <strong>");
+					document.write(articulos + "</strong></p>");
+
+
+
+
+
+
+				</script>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>
